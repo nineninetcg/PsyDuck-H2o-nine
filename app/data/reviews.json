@@ -1,0 +1,77 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Ganesh Tandukar",
+      "date": "Amazing",
+      "text": "Product is amazing, I am truly satisfied service is also very good.",
+      "rating": 5,
+      "letterKey": "g",
+      "initial": "G"
+    },
+    {
+      "id": 2,
+      "name": "Anonymous",
+      "date": "Satisfaction élevée",
+      "text": "Great satisfaction with product quality and excellent customer service. Very responsive and available.",
+      "rating": 5,
+      "letterKey": "an",
+      "initial": "A"
+    },
+    {
+      "id": 3,
+      "name": "Alex K",
+      "date": "Flawless",
+      "text": "Account created within hours. Everything works perfectly. On a scale from 1 to 10, this is a perfect 10.",
+      "rating": 5,
+      "letterKey": "al",
+      "initial": "A"
+    },
+    {
+      "id": 4,
+      "name": "Jacob Adams",
+      "date": "Fantastic Service",
+      "text": "These guys know what they're doing. Patient, understanding and friendly. They fix issues quickly!",
+      "rating": 5,
+      "letterKey": "j",
+      "initial": "J"
+    },
+    {
+      "id": 5,
+      "name": "Arnoldo Pérez",
+      "date": "EXCELENTE",
+      "text": "Compré el servicio y me parece fabuloso. Hasta el momento funciona de maravilla, muchas gracias.",
+      "rating": 5,
+      "letterKey": "ar",
+      "initial": "A"
+    },
+    {
+      "id": 6,
+      "name": "Alejandro",
+      "date": "Perfect",
+      "text": "Perfect.",
+      "rating": 5,
+      "letterKey": "al",
+      "initial": "A"
+    },
+    {
+      "id": 7,
+      "name": "Anuel",
+      "date": "Recommended",
+      "text": "Great concept! Got a ChatGPT subscription and it's been amazing. Everything set up quickly. Highly recommend!",
+      "rating": 5,
+      "letterKey": "an",
+      "initial": "A"
+    },
+    {
+      "id": 8,
+      "name": "Lisa Mylin",
+      "date": "Recommended",
+      "text": "Verified it was good to pay by different means of payment, too good thank you.",
+      "rating": 5,
+      "letterKey": "l",
+      "initial": "L"
+    }
+  ]
+}
+

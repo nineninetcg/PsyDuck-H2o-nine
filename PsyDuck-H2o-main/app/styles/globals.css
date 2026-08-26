@@ -1,0 +1,150 @@
+/**
+ * Global styles for the app
+ * Most styling should be done with Tailwind utilities and shadcn/ui components
+ */
+
+/* Font Loading */
+@font-face {
+  font-family: 'SF Pro';
+  src: url('/fonts/sf-pro.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Global Font */
+body {
+  font-family:
+    'SF Pro',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* CSS Variables - used in Aside component for width calculation */
+:root {
+  --aside-width: 400px;
+}
+
+/* Global image styling */
+img {
+  border-radius: 0;
+}
+
+/* Infinite sliding animation for brand logos */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+  will-change: transform;
+}
+
+/* Fade in animation for search dropdown - only on first appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* YouTube embed responsive styling */
+.prose iframe,
+.prose .ytp-cued-thumbnail-overlay {
+  width: 100% !important;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.prose .ytp-cued-thumbnail-overlay {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.prose .ytp-cued-thumbnail-overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.prose .ytp-large-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Responsive iframes for YouTube */
+.prose iframe[src*="youtube.com"],
+.prose iframe[src*="youtu.be"] {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 315px;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 0;
+}
+
+
+/* ── Terminal Light Theme ─────────────────────────── */
+:root {
+  --accent-green: #9ad2e6;
+  --accent-green-dark: #00c264;
+}
+
+/* White body */
+body {
+  background-color: #ffffff;
+}
+
+/* Green accent scrollbar (Chrome/Edge) */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #9ad2e6; border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #00c264; }
+
+/* Green focus outline globally */
+*:focus-visible {
+  outline: 2px solid #9ad2e6;
+  outline-offset: 2px;
+}
+
+@keyframes wobble { 0%,100% { transform: rotate(0) } 25% { transform: rotate(-8deg) } 60% { transform: rotate(7deg) } 85% { transform: rotate(-4deg) } }
