@@ -18,7 +18,7 @@ export function loader({request}: {request: Request}) {
   return {
     seo: {
       title: 'About Us | Sassypsyduck',
-      description: 'Sassypsyduck is a Malaysia-based Pokémon TCG retailer selling sealed, allocated preorders through the official Southeast Asia distribution channel.',
+      description: 'Sassypsyduck is an international Pokémon TCG retailer selling sealed, allocated preorders across the EU, US and Asia.',
       url: canonicalUrl,
     },
   };
@@ -46,7 +46,7 @@ export default function AboutUs() {
           <section>
             <h2 className="text-2xl font-black text-black mb-3">What We Do</h2>
             <p>
-              Sassypsyduck is a Malaysia-based Pokémon TCG retailer. We open preorders on the game's most hyped sets — starting with the 30th Celebration anniversary set and Mega Evolution: Delta Reign — and sell sealed booster boxes, Elite Trainer Boxes and collections year-round through the official Southeast Asia distribution channel.
+              Sassypsyduck is an international Pokémon TCG retailer. We open preorders on the game's most hyped sets — starting with the 30th Celebration anniversary set and Mega Evolution: Delta Reign — and sell sealed booster boxes, Elite Trainer Boxes and collections year-round through our official distribution channel, shipping across the EU, US and Asia.
             </p>
           </section>
 
@@ -65,7 +65,7 @@ export default function AboutUs() {
                 'Capped preorders — we only sell confirmed allocation',
                 'Free cancellation within 3 days of ordering',
                 'Automatic full refund if allocation falls short',
-                'Insured shipping to Malaysia and Singapore, tracking emailed automatically',
+                'Insured international shipping, tracking emailed automatically',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="text-[#9ad2e6] font-bold mt-0.5">✦</span>
@@ -78,12 +78,8 @@ export default function AboutUs() {
           <section>
             <h2 className="text-2xl font-black text-black mb-3">Get in Touch</h2>
             <address className="not-italic text-gray-600 leading-loose">
-              Malaysia<br /><br />
               <a href="mailto:hello@sassypsyduck.com" className="hover:text-[#9ad2e6] transition-colors">
                 hello@sassypsyduck.com
-              </a><br />
-              <a href="https://wa.me/60179339076" className="hover:text-[#9ad2e6] transition-colors">
-                WhatsApp: +60 17 933 9076
               </a>
             </address>
           </section>

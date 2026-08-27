@@ -57,7 +57,7 @@ const FAQS = [
   {
     question: 'How much is shipping?',
     answer:
-      'Flat RM15 within Malaysia and RM35 to Singapore, no matter how big your order is.',
+      'Flat $10.50 USD, no matter how big your order is.',
   },
   {
     question: 'Why are deposits not available?',
@@ -87,12 +87,12 @@ const FAQS = [
   {
     question: 'Where do you ship, and how much is it?',
     answer:
-      'We ship to Malaysia and Singapore. Flat RM15 within Malaysia and RM35 to Singapore, no matter how big your order is.',
+      'We ship internationally. Flat $10.50 USD, no matter how big your order is.',
   },
   {
     question: 'How do I get in touch?',
     answer:
-      'WhatsApp is fastest: +60 17 933 9076. Or email hello@sassypsyduck.com.',
+      'Email hello@sassypsyduck.com.',
   },
 ];
 

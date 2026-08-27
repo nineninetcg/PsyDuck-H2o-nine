@@ -39,7 +39,7 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}: Foote
                   <span className="font-black tracking-tight text-lg">SASSYPSYDUCK</span>
                 </div>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  Officially allocated Pokémon TCG sealed product for Malaysia.
+                  Officially allocated Pokémon TCG sealed product across the EU, US and Asia.
                   Capped preorders, real allocation, zero games.
                 </p>
               </div>
@@ -75,7 +75,7 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}: Foote
                   {[
                     ['M20 6L9 17l-5-5', 'Capped, confirmed allocation'],
                     ['M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', '100% sealed authentic product'],
-                    ['M13 2L3 14h9l-1 8 10-12h-9l1-8z', 'Fast insured shipping, Malaysia and Singapore'],
+                    ['M13 2L3 14h9l-1 8 10-12h-9l1-8z', 'Fast insured shipping across the EU, US and Asia'],
                   ].map(([d, label]) => (
                     <li key={label} className="flex items-center gap-2.5 text-white/70">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ad2e6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={d} /></svg>

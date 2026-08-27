@@ -19,7 +19,7 @@ const COLLECTION_FAQS = [
   {
     question: 'How much is shipping, and where do you ship?',
     answer:
-      'We ship to Malaysia and Singapore. Flat RM15 within Malaysia and RM35 to Singapore, no matter how big your order is.',
+      'We ship internationally. Flat $10.50 USD, no matter how big your order is.',
   },
   {
     question: 'Is this genuine product?',

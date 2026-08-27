@@ -22,7 +22,7 @@ export function loader({request}: {request: Request}) {
     seo: {
       title: 'Affiliate Program | Sassypsyduck',
       description:
-        'Earn 12.5% commission promoting sealed Pokémon TCG preorders. Average order value over RM2,000, 30 day cookie, monthly payouts.',
+        'Earn 12.5% commission promoting sealed Pokémon TCG preorders. Average order value over $495 USD, 30 day cookie, monthly payouts.',
       url: canonicalUrl,
     },
   };
@@ -30,18 +30,18 @@ export function loader({request}: {request: Request}) {
 
 const NUMBERS = [
   {v: '12.5%', l: 'Commission on every sale'},
-  {v: 'RM2,000+', l: 'Average order value'},
+  {v: '$495+', l: 'Average order value'},
   {v: '30 days', l: 'Cookie window'},
-  {v: 'Monthly', l: 'Payouts, RM100 minimum'},
+  {v: 'Monthly', l: 'Payouts, $25 minimum'},
 ];
 
 const EARNINGS = [
-  {product: 'Booster Bundle', price: 'RM170', payout: 'RM21'},
-  {product: 'Elite Trainer Box', price: 'RM449.99', payout: 'RM56'},
-  {product: 'Storm Emeralda JP Box', price: 'RM499.99', payout: 'RM62'},
-  {product: 'Mini Tin Set of 10', price: 'RM579', payout: 'RM72'},
-  {product: 'Pokémon Center ETB', price: 'RM800', payout: 'RM100'},
-  {product: 'Ultra Premium Collection', price: 'RM1,850', payout: 'RM231'},
+  {product: 'Booster Bundle', price: '$42', payout: '$5'},
+  {product: 'Elite Trainer Box', price: '$112', payout: '$14'},
+  {product: 'Storm Emeralda JP Box', price: '$124', payout: '$15'},
+  {product: 'Mini Tin Set of 10', price: '$144', payout: '$18'},
+  {product: 'Pokémon Center ETB', price: '$198', payout: '$25'},
+  {product: 'Ultra Premium Collection', price: '$459', payout: '$57'},
 ];
 
 const WHY = [
@@ -55,7 +55,7 @@ const WHY = [
   },
   {
     t: 'People buy in bulk',
-    d: 'Most customers order several items at once. Single orders regularly clear RM3,000, which pays out over RM375 on one referral.',
+    d: 'Most customers order several items at once. Single orders regularly clear $744, which pays out over $93 on one referral.',
   },
   {
     t: 'Free cancellation for 3 days',
@@ -66,7 +66,7 @@ const WHY = [
 const FAQS = [
   {
     q: 'How do I get paid?',
-    a: 'Monthly, within 14 days of month end, once your balance reaches RM100. Anything below that rolls over to the next month.',
+    a: 'Monthly, within 14 days of month end, once your balance reaches $25. Anything below that rolls over to the next month.',
   },
   {
     q: 'When is a commission confirmed?',
@@ -82,7 +82,7 @@ const FAQS = [
   },
   {
     q: 'Who is this for?',
-    a: 'Pokémon TCG creators, collectors with an audience, community admins, and anyone in the Malaysian or Singaporean card scene. We approve manually, so tell us where your audience is.',
+    a: 'Pokémon TCG creators, collectors with an audience, community admins, and anyone active in the international Pokémon TCG card scene. We approve manually, so tell us where your audience is.',
   },
 ];
 
@@ -102,7 +102,7 @@ export default function Affiliates() {
             <span className="block w-14 h-1 bg-[#9ad2e6] mt-6" />
           </h1>
           <p className="text-gray-600 text-lg md:text-xl mt-8 leading-relaxed max-w-2xl">
-            12.5% commission on every order. Our average order is over RM2,000,
+            12.5% commission on every order. Our average order is over $495,
             so a single referral is worth more than most programmes pay in a
             month.
           </p>
@@ -171,7 +171,7 @@ export default function Affiliates() {
         </div>
 
         <p className="text-sm text-gray-600 mt-6">
-          A RM3,000 order pays you over <strong className="text-black">RM375</strong>.
+          A $744 order pays you over <strong className="text-black">$93</strong>.
         </p>
       </section>
 
@@ -201,7 +201,7 @@ export default function Affiliates() {
           {[
             ['01', 'Apply', 'Tell us where your audience is. We review every application by hand, usually within 24 hours.'],
             ['02', 'Share', 'You get a personal link and discount code. Post it, story it, drop it in your community.'],
-            ['03', 'Get paid', 'Track everything in your dashboard. Payouts go out monthly once you clear RM100.'],
+            ['03', 'Get paid', 'Track everything in your dashboard. Payouts go out monthly once you clear $25.'],
           ].map(([n, t, d]) => (
             <div key={n}>
               <p className="text-[#9ad2e6] text-3xl font-black">{n}</p>
