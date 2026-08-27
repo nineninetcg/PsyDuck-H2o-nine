@@ -392,7 +392,7 @@ export default function Product() {
                   {rec.title}
                 </p>
                 <p className="text-black text-xs font-bold mt-1">
-                  From MYR {parseFloat(rec.priceRange.minVariantPrice.amount).toFixed(2)}
+                  From {rec.priceRange.minVariantPrice.currencyCode} {parseFloat(rec.priceRange.minVariantPrice.amount).toFixed(2)}
                 </p>
               </a>
             ))}
