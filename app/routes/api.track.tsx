@@ -19,7 +19,7 @@ import type {ActionFunctionArgs} from 'react-router';
  * throws , tracking must never break the storefront.
  */
 
-const META_PIXEL_ID = '997722999960196';
+const META_PIXEL_ID = '2177128539528227';
 const TIKTOK_PIXEL_ID = 'D9O7RDJC77U1C011P3PG';
 
 const META_ENDPOINT = `https://graph.facebook.com/v21.0/${META_PIXEL_ID}/events`;

@@ -10,7 +10,7 @@
  * action is never counted twice even though it's sent twice.
  */
 
-export const META_PIXEL_ID = '997722999960196';
+export const META_PIXEL_ID = '2177128539528227';
 export const TIKTOK_PIXEL_ID = 'D9O7RDJC77U1C011P3PG';
 
 declare global {
