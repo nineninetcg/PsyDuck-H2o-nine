@@ -83,7 +83,7 @@ export function PixelEvents() {
       ];
       trackEvent('ViewContent', {
         value: toNumber(product.price),
-        currency: data?.shop?.currency || 'MYR',
+        currency: data?.shop?.currency || 'USD',
         contents,
       });
     });
@@ -97,7 +97,7 @@ export function PixelEvents() {
       const total = toNumber(line?.cost?.totalAmount?.amount);
       trackEvent('AddToCart', {
         value: total,
-        currency: line?.cost?.totalAmount?.currencyCode || 'MYR',
+        currency: line?.cost?.totalAmount?.currencyCode || 'USD',
         contents: [
           {
             id: String(merchandise.id ?? ''),
@@ -116,7 +116,7 @@ export function PixelEvents() {
       const lines = cart?.lines?.nodes ?? cart?.lines?.edges?.map((e: any) => e.node) ?? [];
       trackEvent('InitiateCheckout', {
         value: toNumber(cart?.cost?.totalAmount?.amount),
-        currency: cart?.cost?.totalAmount?.currencyCode || 'MYR',
+        currency: cart?.cost?.totalAmount?.currencyCode || 'USD',
         contents: lines.map((line: any) => ({
           id: String(line?.merchandise?.id ?? ''),
           name: line?.merchandise?.product?.title,

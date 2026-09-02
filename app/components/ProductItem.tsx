@@ -8,6 +8,7 @@ import {LocaleLink} from '~/components/LocaleLink';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {useAside} from '~/components/Aside';
 import {useNavigate} from 'react-router';
+import {trackEvent} from '~/lib/tracking';
 
 
 export function ProductItem({
@@ -46,7 +47,23 @@ export function ProductItem({
   const handleBuyNow = () => {
     if (!firstVariant?.id) return;
     const variantId = firstVariant.id.split('/').pop();
-    if (variantId) void navigate(`/cart/${variantId}:1`);
+    if (!variantId) return;
+
+    // "Buy Now" jumps straight to the cart permalink, skipping the normal
+    // Add to Cart action and the /cart page , which is where AddToCart and
+    // InitiateCheckout normally fire. Fire them here instead so this path
+    // is tracked too.
+    const content = {
+      id: String(firstVariant.id),
+      name: product.title,
+      quantity: 1,
+      price: currentPrice,
+    };
+    const currency = product.priceRange.minVariantPrice.currencyCode;
+    trackEvent('AddToCart', {value: currentPrice, currency, contents: [content]});
+    trackEvent('InitiateCheckout', {value: currentPrice, currency, contents: [content]});
+
+    void navigate(`/cart/${variantId}:1`);
   };
 
   return (

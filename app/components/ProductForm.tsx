@@ -268,6 +268,7 @@ export function ProductForm({
         <BuyNowButton
           disabled={!selectedVariant || !selectedVariant.availableForSale}
           lines={cartLines}
+          currency={selectedVariant?.price?.currencyCode}
           analytics={
             selectedVariant && product
               ? {

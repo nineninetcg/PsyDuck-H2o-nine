@@ -3,6 +3,7 @@ import {CartForm, type OptimisticCartLineInput} from '@shopify/hydrogen';
 import {Button} from './ui/button';
 import {useLocale} from '~/components/LocaleLink';
 import {useEffect, useRef} from 'react';
+import {trackEvent} from '~/lib/tracking';
 
 export function BuyNowButton({
   analytics,
@@ -10,12 +11,14 @@ export function BuyNowButton({
   disabled,
   lines,
   className,
+  currency,
 }: {
   analytics?: unknown;
   children: React.ReactNode;
   disabled?: boolean;
   lines: Array<OptimisticCartLineInput>;
   className?: string;
+  currency?: string;
 }) {
   const locale = useLocale();
   const cartRoute = locale?.pathPrefix ? `${locale.pathPrefix}/cart` : '/cart';
@@ -29,6 +32,7 @@ export function BuyNowButton({
           disabled={disabled}
           className={className}
           cartRoute={cartRoute}
+          currency={currency}
         >
           {children}
         </BuyNowInner>
@@ -44,6 +48,7 @@ function BuyNowInner({
   children,
   className,
   cartRoute,
+  currency,
 }: {
   fetcher: FetcherWithComponents<any>;
   analytics?: unknown;
@@ -51,6 +56,7 @@ function BuyNowInner({
   children: React.ReactNode;
   className?: string;
   cartRoute: string;
+  currency?: string;
 }) {
   const isAdding = fetcher.state !== 'idle';
   const isDisabled = disabled ?? isAdding;
@@ -63,9 +69,36 @@ function BuyNowInner({
     const checkoutUrl = fetcher.data?.cart?.checkoutUrl;
     if (checkoutUrl && fetcher.state === 'idle') {
       redirectedRef.current = true;
+
+      // Buy Now redirects straight to Shopify checkout, skipping the /cart
+      // page that normally fires InitiateCheckout , fire it here instead.
+      try {
+        const products = (analytics as {products?: Array<Record<string, unknown>>})
+          ?.products;
+        const first = products?.[0];
+        if (first) {
+          const price = Number(first.price);
+          const quantity = Number(first.quantity) || 1;
+          trackEvent('InitiateCheckout', {
+            value: Number.isFinite(price) ? price * quantity : undefined,
+            currency,
+            contents: [
+              {
+                id: String(first.variantId ?? first.id ?? ''),
+                name: String(first.title ?? ''),
+                quantity,
+                price: Number.isFinite(price) ? price : undefined,
+              },
+            ],
+          });
+        }
+      } catch {
+        /* tracking must never block checkout */
+      }
+
       window.location.href = checkoutUrl;
     }
-  }, [fetcher.state, fetcher.data]);
+  }, [fetcher.state, fetcher.data, analytics, currency]);
 
   // Reset redirect guard when lines change (new add-to-cart)
   const prevDataRef = useRef(fetcher.data);
