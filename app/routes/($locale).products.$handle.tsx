@@ -273,17 +273,11 @@ export default function Product() {
           {(() => {
             const stock = getUrgencyStock(product.handle, selectedVariant?.title);
             if (stock === null) return null;
-            const sold = getUrgencySold(product.handle, selectedVariant?.title);
             return (
               <div className="-mt-2 flex flex-col gap-1">
                 <p className="text-sm font-bold text-green-600">
-                  {stock} in stock
+                  Limited in stock
                 </p>
-                {sold !== null && sold > 0 && (
-                  <p className="text-xs text-red-600">
-                    {sold} already sold
-                  </p>
-                )}
               </div>
             );
           })()}
